@@ -13,9 +13,13 @@ export default createStore({
 		},
 	},
 	actions: {
-		async callQuote({ commit }) {
-			const data = await axios.get(API);
-			commit('updateQuote', data.data);
+		async callQuote({ commit, dispatch }) {
+			const { data } = await axios.get(API);
+			if (data.quote.length > 190) {
+				dispatch('callQuote');
+			} else {
+				commit('updateQuote', data);
+			}
 		},
 	},
 	modules: {},
