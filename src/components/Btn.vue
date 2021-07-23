@@ -40,5 +40,9 @@ button {
 		background: linear-gradient(145deg, #373737, #2e2e2e);
 		box-shadow: 20px 20px 60px #141414, -20px -20px 60px #525252;
 	}
+	&:active {
+		color: #373737 !important;
+		background: #ffffff;
+	}
 }
 </style>
